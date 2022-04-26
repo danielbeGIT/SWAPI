@@ -14,8 +14,8 @@ const Navigation = () => {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="ms-auto">
 						{/* add end after or before the to="" to move all links being active */}
-						<Nav.Link as={NavLink} to="/todos" end>Peoples</Nav.Link>
-						<Nav.Link as={NavLink} to="/todos/create">Films</Nav.Link>
+						<Nav.Link as={NavLink} to="/peoples" end>Peoples</Nav.Link>
+						<Nav.Link as={NavLink} to="/films">Films</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

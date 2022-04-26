@@ -8,6 +8,10 @@ import Navigation from './components/Navigation'
 
 // Imported pages
 import HomePage from './pages/HomePage'
+import PeoplesPage from './pages/PeoplesPage'
+import PeoplePage from './pages/PeoplePage'
+import FilmsPage from './pages/FilmsPage'
+import FilmPage from './pages/FilmPage'
 import NotFound from './pages/NotFound'
 
 const App = () => {
@@ -19,6 +23,10 @@ const App = () => {
 			<Container className="py-3">
 				<Routes>
 					<Route path="/" element={<HomePage />} />
+					<Route path="/films" element={<PeoplesPage />} />
+					<Route path="/film/:id" element={<PeoplePage />} />
+					<Route path="/peoples" element={<FilmsPage />} />
+					<Route path="/people/:id" element={<FilmPage />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Container>
