@@ -1,10 +1,14 @@
 import Container from 'react-bootstrap/Container'
 import { Routes, Route } from 'react-router-dom'
-import Navigation from './components/Navigation'
-import HomePage from './pages/HomePage'
-import NotFound from './pages/NotFound'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
+
+// Imported components
+import Navigation from './components/Navigation'
+
+// Imported pages
+import HomePage from './pages/HomePage'
+import NotFound from './pages/NotFound'
 
 const App = () => {
 
@@ -15,7 +19,6 @@ const App = () => {
 			<Container className="py-3">
 				<Routes>
 					<Route path="/" element={<HomePage />} />
-					{/* <Route path="/search" element={<SearchHackerNews />} /> */}
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Container>
