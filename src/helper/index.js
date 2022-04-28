@@ -11,3 +11,5 @@
 
 	return id
 }
+
+export default getIdFromUrl

@@ -23,10 +23,10 @@ const App = () => {
 			<Container className="py-3">
 				<Routes>
 					<Route path="/" element={<HomePage />} />
-					<Route path="/films" element={<PeoplesPage />} />
-					<Route path="/film/:id" element={<PeoplePage />} />
-					<Route path="/peoples" element={<FilmsPage />} />
-					<Route path="/people/:id" element={<FilmPage />} />
+					<Route path="/people" element={<PeoplesPage />} />
+					<Route path="/people/:id" element={<PeoplePage />} />
+					<Route path="/films" element={<FilmsPage />} />
+					<Route path="/films/:id" element={<FilmPage />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Container>

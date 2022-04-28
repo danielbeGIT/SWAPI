@@ -1,12 +1,12 @@
 import Image from 'react-bootstrap/Image'
-import SadKittyCat from '../assets/images/sad-kitten.gif'
+import SadBabyYoda from '../assets/images/sad-baby-yoda.gif'
 
 const NotFound = () => {
 	return (
 		<>
-			<h1>Sorry, that page could not be found 😔</h1>
+			<h1>Sorry, the force could not be found 😔</h1>
 
-			<Image src={SadKittyCat} fluid />
+			<Image src={SadBabyYoda} fluid />
 		</>
 	)
 }
