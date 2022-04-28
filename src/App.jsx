@@ -40,6 +40,5 @@ export default App
 /**
  * TODO LIST
  * 
- * Fix films page and peoples page layout, d-flex flex-wrap
  * fix previous and next page and text in the middle
  */

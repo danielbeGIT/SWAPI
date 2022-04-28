@@ -4,7 +4,7 @@ import SadBabyYoda from '../assets/images/sad-baby-yoda.gif'
 const NotFound = () => {
 	return (
 		<>
-			<h1>Sorry, the force could not be found 😔</h1>
+			<h3>Sorry, the force could not be found 😔</h3>
 
 			<Image src={SadBabyYoda} fluid />
 		</>

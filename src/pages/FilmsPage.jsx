@@ -48,11 +48,11 @@ const FilmsPage = () => {
 			<h1>Films</h1>
 
 			{films.length > 0 && (
-				<ListGroup className="d-flex flex-wrap justify-content-center">
+				<div className="row d-flex justify-content-between">
 					{films.map((film, index) => (
 						<ListGroup.Item
 							key={index} 
-							className="card border-1 rounded mb-5 p-0 col-md-5 col-sm-3 col-xs-12"
+							className="card border-1 rounded m-3 p-0 col-lg-3 col-md-5 col-sm-12"
 						>
 							<div className="card-header p-3">
 								<strong>{film.title}</strong>
@@ -83,10 +83,10 @@ const FilmsPage = () => {
 							</div>
 						</ListGroup.Item>
 					))}
-				</ListGroup>
+				</div>
 			)}
 
-			<div className="buttons d-flex justify-content-between">
+			<div className="buttons d-flex justify-content-between mt-5">
                 <button 
                 type="button" 
                 className="btn btn-primary" 

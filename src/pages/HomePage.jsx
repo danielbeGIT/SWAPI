@@ -4,8 +4,10 @@ const HomePage = () => {
     return (
         <>
 			<h1>Welcome to Star Wars encyclopedia</h1>
-
-			<p>This link does not exist: <Link to="/not-found">Click here</Link></p>
+			<p>
+                <strong>Click this link if your with the dark side: </strong>
+                <Link to="/not-found">THE LINK</Link>
+            </p>
 		</>
     )
 }
