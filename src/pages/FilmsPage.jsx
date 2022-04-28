@@ -7,9 +7,6 @@ import { Link } from "react-router-dom"
 import ListGroup from "react-bootstrap/ListGroup"
 import Image from 'react-bootstrap/Image'
 
-// Helper
-import getIdFromUrl from '../helper/index'
-
 // Image
 import LoadingYoda from '../assets/images/yoda-force.gif'
 
@@ -51,12 +48,10 @@ const FilmsPage = () => {
 			<h1>Films</h1>
 
 			{films.length > 0 && (
-    
 				<ListGroup className="d-flex flex-wrap justify-content-center">
-					{films.map(film =>
+					{films.map((film, index) => (
 						<ListGroup.Item
-							key={getIdFromUrl(film.url)} 
-							to={`/films/${getIdFromUrl(film.url)}`} 
+							key={index} 
 							className="card border-1 rounded mb-5 p-0 col-md-5 col-sm-3 col-xs-12"
 						>
 							<div className="card-header p-3">
@@ -78,8 +73,8 @@ const FilmsPage = () => {
 								</p>
 
 								<Link 
-                                    to={`/films/${getIdFromUrl(film.url)}`} 
-                                    type="button" 
+									type="button" 
+                                    to={`/films/${index + 1}`} 
                                     className="btn btn-primary" 
                                 >
                                     Read More
@@ -87,21 +82,23 @@ const FilmsPage = () => {
 
 							</div>
 						</ListGroup.Item>
-					)}
+					))}
 				</ListGroup>
 			)}
 
 			<div className="buttons d-flex justify-content-between">
                 <button 
                 type="button" 
-                className="btn btn-primary"
+                className="btn btn-primary" 
 				>
 					Previous Page
 				</button>
+
+				Amount of pages
                 
                 <button 
                 type="button" 
-                className="btn btn-primary"
+                className="btn btn-primary" 
 				>
 					Next Page
 				</button>

@@ -7,9 +7,6 @@ import { Link } from "react-router-dom"
 import ListGroup from "react-bootstrap/ListGroup"
 import Image from 'react-bootstrap/Image'
 
-// Helper
-// import getIdFromUrl from '../helper/index'
-
 // Image
 import LoadingYoda from '../assets/images/yoda-force.gif'
 
@@ -61,22 +58,22 @@ const PeoplesPage = () => {
                             </div>
 
                             <div className="card-body">
-                                <p className="card-header bg-white bold">
+                                <p className="card-header bg-white">
                                     <strong>Gender: </strong>
                                     {people.gender}
                                 </p>
-                                <p className="card-header bg-white bold">
+                                <p className="card-header bg-white">
                                     <strong>Born: </strong>
                                     {people.birth_year}
                                 </p>
-                                <p className="card-header bg-white bold mb-3">
+                                <p className="card-header bg-white mb-3">
                                     <strong>In </strong>
                                     {people.films.length} films
                                 </p>
                                 
                                 <Link 
-                                    to={`/people/${index + 1}`} 
                                     type="button" 
+                                    to={`/people/${index + 1}`} 
                                     className="btn btn-primary" 
                                 >
                                     Read More
@@ -95,6 +92,8 @@ const PeoplesPage = () => {
                 >
                     Previous Page
                 </button>
+
+                Amount of pages
                 
                 <button 
                 type="button" 
