@@ -35,10 +35,3 @@ const App = () => {
 }
 
 export default App
-
-
-/**
- * TODO LIST
- * 
- * fix previous and next page and text in the middle
- */

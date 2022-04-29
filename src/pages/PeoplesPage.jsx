@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ListGroup from "react-bootstrap/ListGroup"
 import Image from 'react-bootstrap/Image'
+import Button from 'react-bootstrap/Button'
 
 // Image
 import LoadingYoda from '../assets/images/yoda-force.gif'
@@ -84,23 +85,20 @@ const PeoplesPage = () => {
                     ))}
                 </div>
             )}
-
-            <div className="buttons d-flex justify-content-between mt-5">
-                <button 
-                type="button" 
-                className="btn btn-primary"
+            <div className="d-flex justify-content-between mt-4">
+                <Button
+                    variant="primary"
                 >
                     Previous Page
-                </button>
+                </Button>
 
-                Amount of pages
-                
-                <button 
-                type="button" 
-                className="btn btn-primary"
+                (Amount of pages)
+
+                <Button
+                    variant="primary"
                 >
                     Next Page
-                </button>
+                </Button>
             </div>
 		</>
 	)
