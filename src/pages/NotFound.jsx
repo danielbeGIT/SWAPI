@@ -5,7 +5,6 @@ const NotFound = () => {
 	return (
 		<>
 			<h3>Sorry, the force could not be found 😔</h3>
-
 			<Image src={SadBabyYoda} fluid />
 		</>
 	)

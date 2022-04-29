@@ -43,7 +43,7 @@ const FilmPage = () => {
                 <br />
                 <Image src={LoadingYoda} fluid />
             </>
-          
+            
         )
     }
 
@@ -94,9 +94,7 @@ const FilmPage = () => {
                                 </Link>
                         ))}
                     </ListGroup>
-                
                 </div>
-
                 <div className="buttons d-flex justify-content-between p-3">
                     <button
                             type='button'
@@ -106,7 +104,6 @@ const FilmPage = () => {
                             Back
                     </button>
                 </div>
-
             </ListGroup>
         </>
     )

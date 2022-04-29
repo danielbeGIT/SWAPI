@@ -32,22 +32,22 @@ const PeoplesPage = () => {
 		fetchPeople()
 	}, [])
 
-	if(!loading) {
+    if(!loading) {
         return (
             <>
                 <h2 className="loading">Channeling the force..</h2>
                 <br />
                 <Image src={LoadingYoda} fluid />
             </>
-          
+            
         )
     }
 
     return (
-		<>
-			<h1>People</h1>
-			
-			{people.length > 0 && (
+        <>
+            <h1>People</h1>
+            
+            {people.length > 0 && (
                 <div className="row d-flex justify-content-between">
                     {people.map((people, index) => (
                         <ListGroup.Item 
@@ -79,7 +79,6 @@ const PeoplesPage = () => {
                                 >
                                     Read More
                                 </Link>
-
                             </div>
                         </ListGroup.Item>
                     ))}
@@ -100,7 +99,7 @@ const PeoplesPage = () => {
                     Next Page
                 </Button>
             </div>
-		</>
+        </>
 	)
 }
 

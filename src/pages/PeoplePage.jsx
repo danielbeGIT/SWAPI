@@ -44,7 +44,6 @@ const PeoplePage = () => {
                 <br />
                 <Image src={LoadingYoda} fluid />
             </>
-          
         )
     }
 
@@ -111,7 +110,6 @@ const PeoplePage = () => {
                         ))}
                     </ListGroup>
                 </div>
-
                 <div className="buttons d-flex justify-content-between p-3">
                     <button
                             type='button' 
@@ -121,7 +119,6 @@ const PeoplePage = () => {
                             Back
                     </button>
                 </div>
-
             </ListGroup>
         </>
     )

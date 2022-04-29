@@ -33,15 +33,14 @@ const FilmsPage = () => {
 	}, [])
 
 	if(!loading) {
-        return (
-            <>
-                <h2 className="loading">Channeling the force..</h2>
-                <br />
-                <Image src={LoadingYoda} fluid />
-            </>
-          
-        )
-    }
+		return (
+			<>
+				<h2 className="loading">Channeling the force..</h2>
+				<br />
+				<Image src={LoadingYoda} fluid />
+			</>
+		)
+	}
 
 
 	return (
@@ -75,33 +74,32 @@ const FilmsPage = () => {
 
 								<Link 
 									type="button" 
-                                    to={`/films/${index + 1}`} 
-                                    className="btn btn-primary" 
-                                >
-                                    Read More
-                                </Link>
-
+									to={`/films/${index + 1}`} 
+									className="btn btn-primary" 
+								>
+									Read More
+								</Link>
 							</div>
 						</ListGroup.Item>
 					))}
 				</div>
 			)}
 			<div className="d-flex justify-content-between mt-4">
-                <Button
-                    variant="primary"
-                >
-                    Previous Page
-                </Button>
+				<Button
+					variant="primary"
+				>
+					Previous Page
+				</Button>
 
-                (Amount of pages)
+				(Amount of pages)
 
-                <Button
-                    variant="primary"
-                >
-                    Next Page
-                </Button>
-            </div>
-    	</>
+				<Button
+					variant="primary"
+				>
+					Next Page
+				</Button>
+			</div>
+		</>
 	)
 }
 
