@@ -1,3 +1,4 @@
+// Imported react
 import Container from 'react-bootstrap/Container'
 import { Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
