@@ -5,51 +5,46 @@ import SW_API from "../services/SWAPI"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ListGroup from "react-bootstrap/ListGroup"
-import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 
-// Image
-import LoadingYoda from '../assets/images/yoda-force.gif'
+import Loading from '../components/Loading'
+
 
 const PeoplesPage = () => {
     const [people, setPeople] = useState([])
 	const [loading, setLoading] = useState(false)
-
-	// Get people from API
-	const fetchPeople = async () => {
-        // get data
-		const data = await SW_API.getPeoples()
-
-        // set data results to people
-		setPeople(data.results)
-
-        // Set loading to true for the load to be visible.
-		setLoading(true)
-	}
+    const [page, setPage] = useState(1)
 
 	// Get people from api when component is first mounted
 	useEffect(() => {
-		fetchPeople()
-	}, [])
+        
+        // Get people from API
+        const fetchPeople = async () => {
+            // Set loading to true for the load to be visible.
+            setLoading(true)
 
-    if(!loading) {
-        return (
-            <>
-                <h2 className="loading">Channeling the force..</h2>
-                <br />
-                <Image src={LoadingYoda} fluid />
-            </>
-            
-        )
-    }
+            // get data
+            const data = await SW_API.getPeoples(page)
+
+            // set data results to people
+            setPeople(data)
+
+            // Set loading to false after getting data.
+            setLoading(false)
+        }
+
+		fetchPeople()
+	}, [page])
 
     return (
         <>
+            {loading && <Loading />}
+
             <h1>People</h1>
             
-            {people.length > 0 && (
+            {!loading && (
                 <div className="row d-flex justify-content-between">
-                    {people.map((people, index) => (
+                    {people.results?.map((people, index) => (
                         <ListGroup.Item 
                             key={index} 
                             className="card border-1 rounded m-3 p-0 col-lg-3 col-md-5 col-sm-12"
@@ -86,15 +81,21 @@ const PeoplesPage = () => {
             )}
             <div className="d-flex justify-content-between mt-4">
                 <Button
-                    variant="primary"
+                    disabled={page === 1}
+                    variant="button" 
+                    className="btn btn-primary border-secondary"
+                    onClick={() => setPage(prevValue => prevValue - 1)}
                 >
                     Previous Page
                 </Button>
 
-                (Amount of pages)
+                {page} / 9
 
                 <Button
-                    variant="primary"
+                    disabled={!people.next}
+                    variant="button" 
+                    className="btn btn-primary border-secondary"
+                    onClick={() => setPage(prevValue => prevValue + 1)}
                 >
                     Next Page
                 </Button>

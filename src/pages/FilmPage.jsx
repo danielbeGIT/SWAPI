@@ -5,13 +5,11 @@ import SW_API from "../services/SWAPI"
 import { useEffect, useState } from "react"
 import { Link, useParams, useNavigate } from "react-router-dom"
 import ListGroup from "react-bootstrap/ListGroup"
-import Image from 'react-bootstrap/Image'
 
 // Helper
 import getIdFromUrl from '../helper/index'
 
-// Image
-import LoadingYoda from '../assets/images/yoda-force.gif'
+import Loading from '../components/Loading'
 
 const FilmPage = () => {
     const [film, setFilm] = useState()
@@ -38,12 +36,7 @@ const FilmPage = () => {
 
     if(!loading) {
         return (
-            <>
-                <h2 className="loading">Channeling the force..</h2>
-                <br />
-                <Image src={LoadingYoda} fluid />
-            </>
-            
+            <Loading />
         )
     }
 

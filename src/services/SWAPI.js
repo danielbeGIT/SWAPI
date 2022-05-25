@@ -4,8 +4,8 @@ const BASE_URL = "https://swapi.dev/api/";
 /**
  * Get all people
  */
-const getPeoples = async () => {
-    const res = await axios.get(`${BASE_URL}/people`)
+const getPeoples = async (page) => {
+    const res = await axios.get(`${BASE_URL}/people/?page=${page}`)
     return res.data
 }
 

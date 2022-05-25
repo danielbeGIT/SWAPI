@@ -5,51 +5,44 @@ import SW_API from "../services/SWAPI"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ListGroup from "react-bootstrap/ListGroup"
-import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 
-// Image
-import LoadingYoda from '../assets/images/yoda-force.gif'
+import Loading from '../components/Loading'
 
 const FilmsPage = () => {
 	const [films, setFilms] = useState([])
 	const [loading, setLoading] = useState(false)
-
-	// Get films from api
-	const getFilms = async () => {
-		// get data
-		const data = await SW_API.getFilms()
-
-		// set data results to people
-		setFilms(data.results)
-
-		// Set loading to true for the load to be visible.
-		setLoading(true)
-	}
+    const [page, setPage] = useState(1)
 
 	// Get films from api when component is first mounted
 	useEffect(() => {
+		// Get films from api
+		const getFilms = async () => {
+			// Set loading to true for the load to be visible.
+			setLoading(true)
+
+			// get data
+			const data = await SW_API.getFilms()
+
+			// set data results to people
+			setFilms(data)
+
+			// Set loading to false after getting data.
+            setLoading(false)
+		}
+
 		getFilms()
-	}, [])
-
-	if(!loading) {
-		return (
-			<>
-				<h2 className="loading">Channeling the force..</h2>
-				<br />
-				<Image src={LoadingYoda} fluid />
-			</>
-		)
-	}
-
+	}, [page])
 
 	return (
 		<>
+			{loading && <Loading />}
+
 			<h1>Films</h1>
 
-			{films.length > 0 && (
+			{!loading && (
 				<div className="row d-flex justify-content-between">
-					{films.map((film, index) => (
+					{films.results?.map((film, index) => (
 						<ListGroup.Item
 							key={index} 
 							className="card border-1 rounded m-3 p-0 col-lg-3 col-md-5 col-sm-12"
@@ -86,15 +79,21 @@ const FilmsPage = () => {
 			)}
 			<div className="d-flex justify-content-between mt-4">
 				<Button
-					variant="primary"
+					disabled={page === 1}
+                    variant="button" 
+                    className="btn btn-primary border-secondary"
+                    onClick={() => setPage(prevValue => prevValue - 1)}
 				>
 					Previous Page
 				</Button>
 
-				(Amount of pages)
+				{page} / 1
 
 				<Button
-					variant="primary"
+					disabled={!films.next}
+                    variant="button" 
+                    className="btn btn-primary border-secondary"
+                    onClick={() => setPage(prevValue => prevValue + 1)}
 				>
 					Next Page
 				</Button>
