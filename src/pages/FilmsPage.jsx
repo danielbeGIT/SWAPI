@@ -12,7 +12,7 @@ import Loading from '../components/Loading'
 const FilmsPage = () => {
 	const [films, setFilms] = useState([])
 	const [loading, setLoading] = useState(false)
-    const [page, setPage] = useState(1)
+	const [page, setPage] = useState(1)
 
 	// Get films from api when component is first mounted
 	useEffect(() => {
@@ -79,10 +79,10 @@ const FilmsPage = () => {
 			)}
 			<div className="d-flex justify-content-between mt-4">
 				<Button
-					disabled={page === 1}
-                    variant="button" 
-                    className="btn btn-primary border-secondary"
-                    onClick={() => setPage(prevValue => prevValue - 1)}
+					variant="button" 
+					disabled={page === 1} 
+					className="btn btn-primary border-secondary"
+					onClick={() => setPage(prevValue => prevValue - 1)}
 				>
 					Previous Page
 				</Button>
@@ -90,10 +90,10 @@ const FilmsPage = () => {
 				{page} / 1
 
 				<Button
-					disabled={!films.next}
-                    variant="button" 
-                    className="btn btn-primary border-secondary"
-                    onClick={() => setPage(prevValue => prevValue + 1)}
+					variant="button" 
+					disabled={!films.next} 
+					className="btn btn-primary border-secondary"
+					onClick={() => setPage(prevValue => prevValue + 1)}
 				>
 					Next Page
 				</Button>

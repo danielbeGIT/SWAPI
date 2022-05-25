@@ -14,7 +14,7 @@ import Loading from '../components/Loading'
 const FilmPage = () => {
     const [film, setFilm] = useState()
     const [loading, setLoading] = useState(false)
-	const { id } = useParams()
+    const { id } = useParams()
     const navigate = useNavigate()
 
     // Get film from API

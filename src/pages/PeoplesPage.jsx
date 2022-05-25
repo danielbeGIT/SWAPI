@@ -12,7 +12,7 @@ import Loading from '../components/Loading'
 
 const PeoplesPage = () => {
     const [people, setPeople] = useState([])
-	const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [page, setPage] = useState(1)
 
 	// Get people from api when component is first mounted
@@ -81,8 +81,8 @@ const PeoplesPage = () => {
             )}
             <div className="d-flex justify-content-between mt-4">
                 <Button
-                    disabled={page === 1}
                     variant="button" 
+                    disabled={page === 1} 
                     className="btn btn-primary border-secondary"
                     onClick={() => setPage(prevValue => prevValue - 1)}
                 >
@@ -92,9 +92,9 @@ const PeoplesPage = () => {
                 {page} / 9
 
                 <Button
-                    disabled={!people.next}
                     variant="button" 
-                    className="btn btn-primary border-secondary"
+                    disabled={!people.next} 
+                    className="btn btn-primary border-secondary" 
                     onClick={() => setPage(prevValue => prevValue + 1)}
                 >
                     Next Page
